@@ -27,17 +27,29 @@ class AboutViewModel: HttpResultDelegate {
     }
     
     func getPosts(_ searchText: String) {
-        posts = LocalDatabase.getAllPosts(searchText)
+        posts = retreivePostsFromDatabase(searchText)
         viewModelDelegate?.notifyDataChanged()
+    }
+    
+    func retreivePostsFromDatabase(_ searchText: String) -> [Post] {
+        return LocalDatabase.getAllPosts(searchText)
+    }
+    
+    func postRequestIsValid(_ request: PostRequest) -> Bool {
+        if request.id != 0 &&
+           !request.title.trimmingCharacters(in: .whitespaces).isEmpty &&
+           !request.body.trimmingCharacters(in: .whitespaces).isEmpty {
+            return true
+        } else {
+            return false
+        }
     }
     
     func sendPost() {
         if postService == nil {
             postService = PostService(self)
         }
-        guard postRequest.id != 0,
-              !postRequest.title.trimmingCharacters(in: .whitespaces).isEmpty,
-              !postRequest.body.trimmingCharacters(in: .whitespaces).isEmpty else {
+        guard postRequestIsValid(postRequest) else {
             viewModelDelegate?.error(APIError(errorCode: 0, errorMessage: "Invalid data"))
             return
         }

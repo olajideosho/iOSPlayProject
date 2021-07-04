@@ -23,6 +23,8 @@
 		D6402C11269067D0003F08E4 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6402C10269067D0003F08E4 /* PostService.swift */; };
 		D6402C1E26908D94003F08E4 /* PopUpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6402C1D26908D94003F08E4 /* PopUpButton.swift */; };
 		D6402C3C2690B6BF003F08E4 /* PostCarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6402C3B2690B6BF003F08E4 /* PostCarouselViewController.swift */; };
+		D64A2723269218B600BCBB6D /* CreativityTrialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64A2722269218B600BCBB6D /* CreativityTrialTests.swift */; };
+		D64A272D26921AB700BCBB6D /* AboutViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64A272C26921AB700BCBB6D /* AboutViewModelTests.swift */; };
 		D6C3AB34268F34E1006C08E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C3AB33268F34E1006C08E7 /* AppDelegate.swift */; };
 		D6C3AB36268F34E1006C08E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C3AB35268F34E1006C08E7 /* SceneDelegate.swift */; };
 		D6C3AB3B268F34E1006C08E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6C3AB39268F34E1006C08E7 /* Main.storyboard */; };
@@ -35,6 +37,16 @@
 		D6C3AB68268F52CB006C08E7 /* PopUpOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C3AB67268F52CB006C08E7 /* PopUpOverlay.swift */; };
 		D6C3AB70268F63C0006C08E7 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = D6C3AB6F268F63C0006C08E7 /* loading.json */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D64A2725269218B600BCBB6D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D6C3AB28268F34E1006C08E7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D6C3AB2F268F34E1006C08E7;
+			remoteInfo = CreativityTrial;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		045B263B496AE7723FC09247 /* Pods-CreativityTrial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CreativityTrial.debug.xcconfig"; path = "Target Support Files/Pods-CreativityTrial/Pods-CreativityTrial.debug.xcconfig"; sourceTree = "<group>"; };
@@ -55,6 +67,10 @@
 		D6402C10269067D0003F08E4 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		D6402C1D26908D94003F08E4 /* PopUpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpButton.swift; sourceTree = "<group>"; };
 		D6402C3B2690B6BF003F08E4 /* PostCarouselViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCarouselViewController.swift; sourceTree = "<group>"; };
+		D64A2720269218B600BCBB6D /* CreativityTrialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CreativityTrialTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D64A2722269218B600BCBB6D /* CreativityTrialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreativityTrialTests.swift; sourceTree = "<group>"; };
+		D64A2724269218B600BCBB6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D64A272C26921AB700BCBB6D /* AboutViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewModelTests.swift; sourceTree = "<group>"; };
 		D6C3AB30268F34E1006C08E7 /* CreativityTrial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreativityTrial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6C3AB33268F34E1006C08E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6C3AB35268F34E1006C08E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +87,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D64A271D269218B600BCBB6D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D6C3AB2D268F34E1006C08E7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -208,10 +231,21 @@
 			path = Carousel;
 			sourceTree = "<group>";
 		};
+		D64A2721269218B600BCBB6D /* CreativityTrialTests */ = {
+			isa = PBXGroup;
+			children = (
+				D64A2722269218B600BCBB6D /* CreativityTrialTests.swift */,
+				D64A2724269218B600BCBB6D /* Info.plist */,
+				D64A272C26921AB700BCBB6D /* AboutViewModelTests.swift */,
+			);
+			path = CreativityTrialTests;
+			sourceTree = "<group>";
+		};
 		D6C3AB27268F34E1006C08E7 = {
 			isa = PBXGroup;
 			children = (
 				D6C3AB32268F34E1006C08E7 /* CreativityTrial */,
+				D64A2721269218B600BCBB6D /* CreativityTrialTests */,
 				D6C3AB31268F34E1006C08E7 /* Products */,
 				07AE2C18990BF0C35736F59A /* Pods */,
 				38A5BC76630578A88AF12DD6 /* Frameworks */,
@@ -222,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				D6C3AB30268F34E1006C08E7 /* CreativityTrial.app */,
+				D64A2720269218B600BCBB6D /* CreativityTrialTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -362,6 +397,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D64A271F269218B600BCBB6D /* CreativityTrialTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D64A2729269218B600BCBB6D /* Build configuration list for PBXNativeTarget "CreativityTrialTests" */;
+			buildPhases = (
+				D64A271C269218B600BCBB6D /* Sources */,
+				D64A271D269218B600BCBB6D /* Frameworks */,
+				D64A271E269218B600BCBB6D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D64A2726269218B600BCBB6D /* PBXTargetDependency */,
+			);
+			name = CreativityTrialTests;
+			productName = CreativityTrialTests;
+			productReference = D64A2720269218B600BCBB6D /* CreativityTrialTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		D6C3AB2F268F34E1006C08E7 /* CreativityTrial */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D6C3AB44268F34E2006C08E7 /* Build configuration list for PBXNativeTarget "CreativityTrial" */;
@@ -390,6 +443,10 @@
 				LastSwiftUpdateCheck = 1220;
 				LastUpgradeCheck = 1220;
 				TargetAttributes = {
+					D64A271F269218B600BCBB6D = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = D6C3AB2F268F34E1006C08E7;
+					};
 					D6C3AB2F268F34E1006C08E7 = {
 						CreatedOnToolsVersion = 12.2;
 					};
@@ -409,11 +466,19 @@
 			projectRoot = "";
 			targets = (
 				D6C3AB2F268F34E1006C08E7 /* CreativityTrial */,
+				D64A271F269218B600BCBB6D /* CreativityTrialTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D64A271E269218B600BCBB6D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D6C3AB2E268F34E1006C08E7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -470,6 +535,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D64A271C269218B600BCBB6D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D64A272D26921AB700BCBB6D /* AboutViewModelTests.swift in Sources */,
+				D64A2723269218B600BCBB6D /* CreativityTrialTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D6C3AB2C268F34E1006C08E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -501,6 +575,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		D64A2726269218B600BCBB6D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D6C3AB2F268F34E1006C08E7 /* CreativityTrial */;
+			targetProxy = D64A2725269218B600BCBB6D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		D6C3AB39268F34E1006C08E7 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -521,6 +603,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D64A2727269218B600BCBB6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BPFB7Y4X4B;
+				INFOPLIST_FILE = CreativityTrialTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.olajideosho.CreativityTrialTests;
+				PRODUCT_MODULE_NAME = CreativityTrialTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CreativityTrial.app/CreativityTrial";
+			};
+			name = Debug;
+		};
+		D64A2728269218B600BCBB6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BPFB7Y4X4B;
+				INFOPLIST_FILE = CreativityTrialTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.olajideosho.CreativityTrialTests;
+				PRODUCT_MODULE_NAME = CreativityTrialTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CreativityTrial.app/CreativityTrial";
+			};
+			name = Release;
+		};
 		D6C3AB42268F34E2006C08E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -680,6 +804,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D64A2729269218B600BCBB6D /* Build configuration list for PBXNativeTarget "CreativityTrialTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D64A2727269218B600BCBB6D /* Debug */,
+				D64A2728269218B600BCBB6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D6C3AB2B268F34E1006C08E7 /* Build configuration list for PBXProject "CreativityTrial" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

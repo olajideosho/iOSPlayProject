@@ -7,14 +7,8 @@
 
 import Foundation
 
-protocol HttpResultDelegate {
-    func successWithData(_ data: Any)
-    func errorWithStatus(_ status: APIError)
-}
-
 struct HttpClient {
     private static var client: HttpClient!
-    private var resultDelegate: HttpResultDelegate!
     
     static func getClient() -> HttpClient {
         if client == nil {
@@ -23,9 +17,9 @@ struct HttpClient {
         return client
     }
     
-    func get<T: Codable>(_ url: String, _ resultDelegate: HttpResultDelegate?, _ responseType: T.Type) {
+    func get<T: Codable>(_ url: String, _ responseType: T.Type, _ completion: @escaping (T?, APIError?) -> Void) {
         guard let endpoint = URL(string: url) else {
-            resultDelegate?.errorWithStatus(APIError(errorCode: 0, errorMessage: "URL provided is invalid"))
+            completion(nil, APIError(errorCode: 0, errorMessage: "URL provided is invalid"))
             return
         }
         
@@ -36,24 +30,24 @@ struct HttpClient {
             data, response, error in
             if error != nil {
                 let httpResponse = response as? HTTPURLResponse
-                resultDelegate?.errorWithStatus(APIError(errorCode: httpResponse?.statusCode ?? 0, errorMessage: error?.localizedDescription ?? "An Error Occured"))
+                completion(nil, APIError(errorCode: httpResponse?.statusCode ?? 0, errorMessage: error?.localizedDescription ?? "An Error Occured"))
                 return
             }
             
             do{
                 let result = try JSONDecoder().decode(responseType, from: data!)
-                resultDelegate?.successWithData(result)
+                completion(result, nil)
                 return
             } catch {
-                resultDelegate?.errorWithStatus(APIError(errorCode: 0, errorMessage: error.localizedDescription))
+                completion(nil, APIError(errorCode: 0, errorMessage: error.localizedDescription))
                 return
             }
         }.resume()
     }
     
-    func post<T: Codable, L: Codable>(_ url: String, _ payload: T, _ resultDelegate: HttpResultDelegate?, _ responseType: L.Type) {
+    func post<T: Codable, L: Codable>(_ url: String, _ payload: T, _ responseType: L.Type, _ completion: @escaping (L?, APIError?) -> Void) {
         guard let endpoint = URL(string: url) else {
-            resultDelegate?.errorWithStatus(APIError(errorCode: 0, errorMessage: "URL provided is invalid"))
+            completion(nil, APIError(errorCode: 0, errorMessage: "URL provided is invalid"))
             return
         }
         
@@ -63,8 +57,7 @@ struct HttpClient {
         do {
             request.httpBody = try JSONEncoder().encode(payload)
         } catch {
-            resultDelegate?.errorWithStatus(APIError(errorCode: 0, errorMessage: error.localizedDescription))
-            print(error.localizedDescription)
+            completion(nil, APIError(errorCode: 0, errorMessage: error.localizedDescription))
             return
         }
         
@@ -72,16 +65,16 @@ struct HttpClient {
             data, response, error in
             if error != nil {
                 let httpResponse = response as? HTTPURLResponse
-                resultDelegate?.errorWithStatus(APIError(errorCode: httpResponse?.statusCode ?? 0, errorMessage: error?.localizedDescription ?? "An Error Occured"))
+                completion(nil, APIError(errorCode: httpResponse?.statusCode ?? 0, errorMessage: error?.localizedDescription ?? "An Error Occured"))
                 return
             }
             
             do{
                 let result = try JSONDecoder().decode(responseType, from: data!)
-                resultDelegate?.successWithData(result)
+                completion(result, nil)
                 return
             } catch {
-                resultDelegate?.errorWithStatus(APIError(errorCode: 0, errorMessage: error.localizedDescription))
+                completion(nil, APIError(errorCode: 0, errorMessage: error.localizedDescription))
                 return
             }
         }.resume()

@@ -13,7 +13,7 @@ protocol AboutViewModelDelegate {
     func error(_ error: APIError)
 }
 
-class AboutViewModel: HttpResultDelegate {
+class AboutViewModel {
     
     var loadingDelegate: LoadingOverlayDelegate?
     var viewModelDelegate: AboutViewModelDelegate?
@@ -47,33 +47,33 @@ class AboutViewModel: HttpResultDelegate {
     
     func sendPost() {
         if postService == nil {
-            postService = PostService(self)
+            postService = PostService()
         }
         guard postRequestIsValid(postRequest) else {
             viewModelDelegate?.error(APIError(errorCode: 0, errorMessage: "Invalid data"))
             return
         }
         loadingDelegate?.isLoading(true)
-        postService?.sendPost(self.postRequest)
+        postService?.sendPost(self.postRequest, sendPostCompletion(_:_:))
     }
     
-    func successWithData(_ data: Any) {
+    func sendPostCompletion(_ data: Any?, _ error: APIError?) -> Void {
+        if let status = error {
+            DispatchQueue.main.async {
+                self.loadingDelegate?.isLoading(false)
+            }
+            self.viewModelDelegate?.error(status)
+            self.clearPostRequest()
+            return
+        }
         DispatchQueue.main.async {
             self.loadingDelegate?.isLoading(false)
         }
         if let post = data as? PostDTO {
             LocalDatabase.createPost(post.id!, post.title!, post.body!)
-            getPosts("")
+            self.getPosts("")
         }
-        clearPostRequest()
-    }
-    
-    func errorWithStatus(_ status: APIError) {
-        DispatchQueue.main.async {
-            self.loadingDelegate?.isLoading(false)
-        }
-        viewModelDelegate?.error(status)
-        clearPostRequest()
+        self.clearPostRequest()
     }
     
     func clearPostRequest() {

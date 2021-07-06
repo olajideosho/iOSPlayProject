@@ -8,17 +8,13 @@
 import Foundation
 
 struct PostService {
-    private var resultDelegate: HttpResultDelegate?
     let baseURL: String = "https://jsonplaceholder.typicode.com/posts"
     
-    init(_ resultDelegate: HttpResultDelegate) {
-        self.resultDelegate = resultDelegate
-    }
-    func getPosts() {
-        HttpClient.getClient().get(baseURL, resultDelegate, [PostDTO].self)
+    func getPosts(_ completion: @escaping (Any?, APIError?) -> Void) {
+        HttpClient.getClient().get(baseURL, [PostDTO].self, completion)
     }
     
-    func sendPost(_ post: PostRequest){
-        HttpClient.getClient().post(baseURL, post, resultDelegate, PostDTO.self)
+    func sendPost(_ post: PostRequest, _ completion: @escaping (Any?, APIError?) -> Void){
+        HttpClient.getClient().post(baseURL, post, PostDTO.self, completion)
     }
 }

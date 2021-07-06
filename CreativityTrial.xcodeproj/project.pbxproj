@@ -35,7 +35,7 @@
 		D6C3AB5D268F4181006C08E7 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C3AB5C268F4181006C08E7 /* AboutViewController.swift */; };
 		D6C3AB64268F5234006C08E7 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C3AB63268F5234006C08E7 /* HomeViewModel.swift */; };
 		D6C3AB68268F52CB006C08E7 /* PopUpOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C3AB67268F52CB006C08E7 /* PopUpOverlay.swift */; };
-		D6C3AB70268F63C0006C08E7 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = D6C3AB6F268F63C0006C08E7 /* loading.json */; };
+		D6EB7BC72692E58200F460F9 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = D6EB7BC62692E58200F460F9 /* loading.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,7 +83,7 @@
 		D6C3AB5C268F4181006C08E7 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		D6C3AB63268F5234006C08E7 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		D6C3AB67268F52CB006C08E7 /* PopUpOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpOverlay.swift; sourceTree = "<group>"; };
-		D6C3AB6F268F63C0006C08E7 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
+		D6EB7BC62692E58200F460F9 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -389,7 +389,7 @@
 		D6C3AB6E268F63B2006C08E7 /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
-				D6C3AB6F268F63C0006C08E7 /* loading.json */,
+				D6EB7BC62692E58200F460F9 /* loading.json */,
 			);
 			path = Lottie;
 			sourceTree = "<group>";
@@ -485,7 +485,7 @@
 			files = (
 				D6C3AB40268F34E2006C08E7 /* LaunchScreen.storyboard in Resources */,
 				D6C3AB3D268F34E2006C08E7 /* Assets.xcassets in Resources */,
-				D6C3AB70268F63C0006C08E7 /* loading.json in Resources */,
+				D6EB7BC72692E58200F460F9 /* loading.json in Resources */,
 				D6C3AB3B268F34E1006C08E7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

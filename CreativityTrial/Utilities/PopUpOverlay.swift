@@ -80,6 +80,7 @@ class LoadingViewController : UIViewController {
         animationView.backgroundColor = .clear
         animationView.contentMode = .scaleAspectFit
         animationView.loopMode = .loop
+        loadingView.backgroundColor = .clear
         loadingView.addSubview(animationView)
     }
     

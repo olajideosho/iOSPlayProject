@@ -13,7 +13,7 @@ protocol HomeViewModelDelegate {
     func receivedError(_ error: APIError)
 }
 
-class HomeViewModel: HttpResultDelegate {
+class HomeViewModel {
     
     var loadingDelegate: LoadingOverlayDelegate?
     var viewModelDelegate: HomeViewModelDelegate?
@@ -27,13 +27,20 @@ class HomeViewModel: HttpResultDelegate {
     
     func fetchPosts(){
         if postService == nil {
-            postService = PostService(self)
+            postService = PostService()
         }
         loadingDelegate?.isLoading(true)
-        postService?.getPosts()
+        postService?.getPosts(fetchPostCompletion(_:_:))
     }
     
-    func successWithData(_ data: Any) {
+    func fetchPostCompletion(_ data: Any?, _ error: APIError?) -> Void {
+        if let status = error {
+            DispatchQueue.main.async {
+                self.loadingDelegate?.isLoading(false)
+            }
+            viewModelDelegate?.receivedError(status)
+            return
+        }
         DispatchQueue.main.async {
             self.loadingDelegate?.isLoading(false)
         }
@@ -44,13 +51,5 @@ class HomeViewModel: HttpResultDelegate {
             self.posts = posts
             viewModelDelegate?.receivedPosts(posts)
         }
-        
-    }
-    
-    func errorWithStatus(_ status: APIError) {
-        DispatchQueue.main.async {
-            self.loadingDelegate?.isLoading(false)
-        }
-        viewModelDelegate?.receivedError(status)
     }
 }

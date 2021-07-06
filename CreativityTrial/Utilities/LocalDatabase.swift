@@ -27,8 +27,8 @@ struct LocalDatabase {
         initialize()
         do {
             let request = Post.fetchRequest() as NSFetchRequest<Post>
-            if !searchText.trimmingCharacters(in: .whitespaces).isEmpty {
-                let pred = NSPredicate(format: "title CONTAINS %@", searchText)
+            if !searchText.lowercased().trimmingCharacters(in: .whitespaces).isEmpty {
+                let pred = NSPredicate(format: "title CONTAINS[cd] %@", searchText)
                 request.predicate = pred
             }
             let data = try context?.fetch(request)
